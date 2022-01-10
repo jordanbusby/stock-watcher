@@ -22,6 +22,7 @@
 - Added an animation on new stock cards to bring attention that a card has been added.
 
 ## Todo
+- Change the font-color of OPEN, HIGH, LOW and the corresponding prices, among a couple other things on the stock quote card. 
 - Clean up/consolidate CSS media queries. 
 - Some of the error handling is fragmented between files/locations. This could be cleaned up.
 - Import a symbol -> name map to display the appropriate company name instead of the symbol at the top. (Like the designs do)
