@@ -2,7 +2,9 @@
 
 ## Notes
 -It doesn't appear to be working in Node 17+, using Node 16.13.1.
--This can probably be fixed by `export NODE_OPTIONS=--openssl-legacy-provider` in terminal before launch; but I haven't yet tested.
+-This can probably be fixed by  
+`export NODE_OPTIONS=--openssl-legacy-provider`  
+in terminal before launch; but I haven't yet tested.
 
 ## Updates
 
