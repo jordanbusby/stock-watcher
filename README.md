@@ -19,11 +19,13 @@
 
 ### CSS
 - Added a lot of media queries for the stock quote card.
+- Added an animation on new stock cards to bring attention that a card has been added.
 
 ## Todo
 - Clean up/consolidate CSS media queries. 
 - Some of the error handling is fragmented between files/locations. This could be cleaned up.
 - Import a symbol -> name map to display the appropriate company name instead of the symbol at the top. (Like the designs do)
+- If invalid symbol is added, could display a list of similar symbols so user could easily click the wanted one. i.e., 'MST' not found, did you mean 'MSFT'?
 
 
 ## Questions for designers
