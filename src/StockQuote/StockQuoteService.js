@@ -1,6 +1,5 @@
 const baseUrl = new URL('https://www.alphavantage.co/query');
-// const apiKey = 'HY0JP87WH3PG17X6';
-const apiKey = '5A2LSLAK3OKV7LY1'
+const apiKey = 'HY0JP87WH3PG17X6';
 
 /**
  * Will only return the data from alphavantage if it contains the stock quote info.
@@ -26,11 +25,11 @@ const getApiData = (symbol) => {
         .catch(handleFetchError);
 }
 
+// sets appropriate message if fetch rejects
 const handleFetchError = e => {
   const inputErrorText = document.querySelector('.stock-error-text')
   const stockSearchInput = document.querySelector('#stock-search-input')
 
   inputErrorText.innerHTML = `Unknown connection error. Please try again in a minute.`
   stockSearchInput.classList.add('is-invalid')
-
 }
