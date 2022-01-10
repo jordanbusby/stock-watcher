@@ -27,11 +27,15 @@ module.exports = {
                 test: /\.html$/i,
                 loader: 'html-loader',
             },
+            {
+              test: /\.svg$/i,
+              loader: 'raw-loader'
+            }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './assets/index.html'
+            template: './assets/index.html',
         })
     ],
     devServer: {

@@ -19,8 +19,14 @@ const getApiData = (symbol) => {
     let url = baseUrl
     url.search = new URLSearchParams({function: 'GLOBAL_QUOTE', symbol, 'apikey': apiKey} ).toString();
 
+    console.log(url)
+
     return fetch(url.toString(), {method: 'GET'})
         .then(response => response.json())
+
+        // unwrap object returnedObject['Global Quote']
         .then(x => x['Global Quote'] || {})
+
+        // send it to console
         .catch(error => console.warn(error));
 }

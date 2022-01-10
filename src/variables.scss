@@ -1,6 +1,65 @@
+$white: #fff;
+$white-fade: #fff9;
+
 $light-gray: #f5f5f5;
 $charcoal: #696969;
 $dark-blue: #404261;
 
 $bright-green: #5fd05f;
+$dark-green: rgb(6, 100, 6);
+
+$pink: rgb(255, 122, 122);
 $bright-red: #FF3110;
+$dark-red: rgb(141, 17, 17);
+
+$box-shadow:
+  1px 0.9px 2.2px rgba(0, 0, 0, 0.02),
+  2.4px 2.1px 5.3px rgba(0, 0, 0, 0.028),
+  4.5px 4px 10px rgba(0, 0, 0, 0.035),
+  8px 7.1px 17.9px rgba(0, 0, 0, 0.042),
+  15px 13.4px 33.4px rgba(0, 0, 0, 0.05),
+  36px 32px 80px rgba(0, 0, 0, 0.07)
+  ;
+
+
+$red-gradient:
+  linear-gradient(to bottom,
+    $pink,
+    $dark-red
+  );
+
+$green-gradient:
+  linear-gradient(to bottom,
+    $bright-green,
+    $dark-green
+  );
+
+$meter-position: 40% center/3% 80% no-repeat;
+
+$meter-fade-to-top:
+  linear-gradient(to top,
+    $white,
+    $white-fade
+  ) $meter-position;
+
+$meter-fade-to-bottom:
+  linear-gradient(to bottom,
+    $white,
+    $white-fade
+  ) $meter-position;
+
+$stock-meter-value-up:
+  $meter-fade-to-bottom,
+  $green-gradient;
+
+$stock-meter-value-down:
+  $meter-fade-to-top,
+  $red-gradient;
+
+%stock-meter-pseudos {
+  position: absolute;
+  left: 46%;
+  color: $white;
+}
+
+$stock-meter-arrow-cp: polygon(0 0, 100% 50%, 0 100%);

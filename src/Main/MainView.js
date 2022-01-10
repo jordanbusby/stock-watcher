@@ -14,19 +14,36 @@ const MainView = Marionette.View.extend({
 
     events: {
         'click @ui.stockSearchButton': 'searchStock',
+        'input @ui.stockSearchInput': 'removeInputInvalidClass'
     },
 
+    // on 'add stock' click
     searchStock: function() {
         const symbol = this.ui.stockSearchInput.val();
 
         if (symbol.length < 1) {
             // TODO: show the user a warning here
-            console.warn('No input detected, aborting search');
+
+            // add bootstrap class
+            this.ui.stockSearchInput.addClass('is-invalid')
+
             return;
         }
 
+
         this.ui.stockSearchInput.val('');
         this.trigger('stockSearch', {symbol: symbol.toUpperCase()});
+    },
+
+    removeInputInvalidClass() {
+
+      // get reference to input
+      const input = this.ui.stockSearchInput
+
+      // if input was invalidated, remove that class on typing
+      if (input.hasClass('is-invalid')) {
+        input.removeClass('is-invalid')
+      }
     }
 })
 

@@ -1,1 +1,35 @@
-//TODO - add necessary styles to achieve the grid like view in the design.
+@import "../variables.scss";
+
+:root {
+  --card-left-display: none;
+}
+
+#stock-search-button {
+  box-shadow: $box-shadow;
+}
+
+
+.stock-quotes-container {
+  display: grid;
+  gap: 0.4rem;
+  grid-auto-rows: 1fr;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --card-left-display: flex;
+  }
+  .stock-quotes-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stock-recent-performance {
+    
+  }
+}
+
+@media (min-width: 992px) {
+  .stock-quotes-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -1,12 +1,23 @@
 <div class="stock-quote-card">
 
     <div class="card-left">
-<!--        TODO - add the content shown in the mockup -->
+      <figure
+        class="stock-meter <%- this.getValueClassName(change) %>"
+        data-stock-high="<%- this.formatMoney(high) %>"
+        data-stock-low="<%- this.formatMoney(low) %>"
+      >
+        <div class="stock-meter-arrow" data-position="<%= this.getStockMeterArrowPosition() %>"></div>
+      </figure>
     </div>
     <div class="card-right">
         <h3><%- name %></h3>
         <p class="stock-symbol-label"><%- symbol %></p>
-        <p class="stock-price"><%- this.formatMoney(price) %> <span><%- this.formatMoney(change) %> (<%- changePercent %>)</span></p>
+        <p class="stock-price"><%- this.formatMoney(price) %>
+          <span class="<%= this.getValueClassName(change) %>">
+            <span class="arrow"><%= this.getArrow(change) %></span>
+            <%- this.formatMoney(change) %> (<%- changePercent %>)
+          </span>
+        </p>
         <p class="stock-recent-performance">
             <span>OPEN <%- this.formatMoney(open) %></span>
             <span>HIGH <%- this.formatMoney(high) %></span>

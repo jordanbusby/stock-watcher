@@ -3,9 +3,11 @@
 
 .stock-quote-card {
   display: flex;
-  margin: 5px;
   background: white;
   min-height: 105px;
+  height: 100%;
+  animation: new-stock-card .7s ease-out;
+  box-shadow: $box-shadow;
 
   p {
     margin-bottom: 0;
@@ -21,15 +23,53 @@
 
 .card-left {
   width: 80px;
-
-  display:flex;
-  align-items: center;
+  display: var(--card-left-display);
+  // align-items: center;
   position: relative;
+
+  figure.stock-meter {
+
+    .stock-meter-arrow {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      clip-path: ($stock-meter-arrow-cp);
+      background: $white;
+    }
+
+    &.value-up {
+      background: $stock-meter-value-up;
+    }
+
+    &.value-down {
+      background: $stock-meter-value-down;
+    }
+
+    margin: 0;
+    font-size: 0.7em;
+    flex: 1 0 auto;
+
+    &::before,
+    &::after {
+      @extend %stock-meter-pseudos;
+    }
+
+    &::before {
+      content: attr(data-stock-high);
+      top: 8%;
+    }
+
+    &::after {
+      content: attr(data-stock-low);
+      bottom: 8%;
+    }
+  }
 }
 
 .card-right {
   flex-grow: 1;
   padding: 10px;
+  padding-left: 20px;
 }
 
 .stock-symbol-label {
@@ -43,9 +83,33 @@
   font-size: 1.3em;
   color: $dark-blue;
   margin-top: 5px;
+  display: inline-flex;
+  align-items: center;
+
 
   span {
     font-size: .7em;
+
+    &.value-up {
+      color: $bright-green;
+      fill: $bright-green;
+    }
+
+    &.value-down {
+      color: $bright-red;
+      fill: $bright-red;
+    }
+    
+    svg {
+        height: 7px;
+        width: 7px;
+        margin-left: 0.8rem;
+        align-self: top;
+        vertical-align: baseline;
+        margin-bottom: 0.05rem;
+      }
+
+
   }
 }
 
@@ -55,5 +119,15 @@
 
   span {
     margin-right: 5px;
+  }
+}
+
+@keyframes new-stock-card {
+  from {
+    background-color: lightblue;
+  }
+
+  to {
+    background-color: #fff;
   }
 }

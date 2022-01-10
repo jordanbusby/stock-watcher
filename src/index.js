@@ -4,6 +4,7 @@ import './style.scss';
 import {getGlobalQuoteBySymbol} from "./StockQuote/StockQuoteService";
 import {createFromGlobalQuote, StockQuoteCollection} from "./StockQuote/StockQuoteModel";
 import {StockQuoteCollectionView} from "./StockQuote/StockQuoteCollectionView";
+import getFakeData from './FakeData'
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -29,10 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
         stockQuoteCollection.add(createFromGlobalQuote(globalQuote));
     }
 
-    mainView.on("stockSearch", function(e) {
+
+
+    mainView.on("stockSearch", async function(e) {
         const searchSymbol = e.symbol;
-        alert(searchSymbol);
-        // TODO - replace the alert with a call to ./StockQuote/StockQuoteService.getGlobalQuoteBySymbol and complete
-        //  the callback function by adding valid results to the stockQuoteCollection
+
+        getGlobalQuoteBySymbol(e.symbol)
+          .then(data => {
+            console.log(data)
+            addNewQuoteToCollection(data)
+          })
+
+        // fake data
+        // try {
+        //   const data = await getFakeData(e.symbol)
+        //   addNewQuoteToCollection(data)
+        // } catch (e) {
+        //   console.log('catch block', e)
+        // }
     })
 })
