@@ -19,8 +19,6 @@ export const StockQuoteView = Marionette.View.extend({
      * @returns {String}
      */
     formatMoney: function(value) {
-        // TODO - complete the format money method, don't just return the input.
-
         const re = /^(-?\d+[.]\d{1,2})\d*$/
         
         const [, match] = re.exec(value) || ['', '0.00']
@@ -42,6 +40,8 @@ export const StockQuoteView = Marionette.View.extend({
       : arrowDown
     },
     
+    // get a class-name for the stock quote card for red or green coloring
+    // this is used in the stock quote card template
     getValueClassName(value) {
     const num = Number(Number(value).toFixed(2))
 
@@ -68,9 +68,8 @@ export const StockQuoteView = Marionette.View.extend({
       const numLow = +low
       const numPrice = +price
 
-      // get percentage of a range, -10 because the stock meter sits in the center
-      // of the div and its height is 80% of the container
-      const pct = Math.floor(((numPrice - numLow) * 100 / (numHigh - numLow)) - 10)
+      // get percentage of a range, * .8 because the stock meter's height if 80% of the container
+      const pct = Math.floor(((numPrice - numLow) * 100 / (numHigh - numLow)) * .8)
 
       // return a % string for css variable
       return `${pct}%`
