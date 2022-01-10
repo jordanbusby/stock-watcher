@@ -9,7 +9,8 @@ const MainView = Marionette.View.extend({
 
     ui: {
         stockSearchInput: '#stock-search-input',
-        stockSearchButton: '#stock-search-button'
+        stockSearchButton: '#stock-search-button',
+        stockSearchInputError: '.stock-error-text'
     },
 
     events: {
@@ -24,6 +25,8 @@ const MainView = Marionette.View.extend({
         if (symbol.length < 1) {
             // TODO: show the user a warning here
 
+            // set error text
+            this.ui.stockSearchInputError.html("Please enter a stock symbol.")
             // add bootstrap class
             this.ui.stockSearchInput.addClass('is-invalid')
 
@@ -36,7 +39,6 @@ const MainView = Marionette.View.extend({
     },
 
     removeInputInvalidClass() {
-
       // get reference to input
       const input = this.ui.stockSearchInput
 

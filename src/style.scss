@@ -6,7 +6,3 @@ body {
   // TODO - replace the inline color with a SCSS variable from ./variables.scss
   background: $light-gray;
 }
-
-input.input__error {
-  border: 2px solid $bright-red;
-}

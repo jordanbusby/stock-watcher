@@ -24,31 +24,31 @@
 .card-left {
   width: 80px;
   display: var(--card-left-display);
-  // align-items: center;
   position: relative;
 
   figure.stock-meter {
+    margin: 0;
+    font-size: 0.7em;
+    flex: 1 0 auto;
 
     .stock-meter-arrow {
       position: absolute;
       width: 10px;
       height: 10px;
-      clip-path: ($stock-meter-arrow-cp);
+      clip-path: $stock-meter-arrow-cp;
       background: $white;
+      bottom: var(--arrow-position, 50%);
+      left: 26%;
     }
-
+    
     &.value-up {
       background: $stock-meter-value-up;
     }
-
+    
     &.value-down {
       background: $stock-meter-value-down;
     }
-
-    margin: 0;
-    font-size: 0.7em;
-    flex: 1 0 auto;
-
+    
     &::before,
     &::after {
       @extend %stock-meter-pseudos;
@@ -70,6 +70,28 @@
   flex-grow: 1;
   padding: 10px;
   padding-left: 20px;
+
+  // mobile
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    padding: 0 2rem;
+    align-items: center;
+    align-content: center;
+    display: grid;
+    grid:
+      "name price" 40%
+      "symbol price" 40% / 1fr 1fr;
+  }
+
+  h3 {
+    font-weight: bold;
+    letter-spacing: .4px;
+
+    // mobile
+    @media (max-width: 768px) {
+      grid-area: name;
+    }
+  }
 }
 
 .stock-symbol-label {
@@ -77,18 +99,41 @@
   text-transform: uppercase;
   line-height: .7em;
   color: $charcoal;
+  margin-top: .2rem;
+
+  // mobile
+  @media (max-width: 768px) {
+    grid-area: symbol;
+  }
 }
 
 .stock-price {
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: $dark-blue;
-  margin-top: 5px;
+  margin-top: 1rem;
+  line-height: 0.8;
   display: inline-flex;
   align-items: center;
 
 
+  // mobile
+  @media (max-width: 768px) {
+    grid-area: price;
+    align-self: stretch;
+    margin-top: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    align-content: space-between;
+    justify-content: space-evenly;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   span {
-    font-size: .7em;
+    font-size: .6em;
+    align-self: flex-end;
+    letter-spacing: .5px;
 
     &.value-up {
       color: $bright-green;
@@ -101,12 +146,18 @@
     }
     
     svg {
-        height: 7px;
-        width: 7px;
-        margin-left: 0.8rem;
-        align-self: top;
-        vertical-align: baseline;
-        margin-bottom: 0.05rem;
+      height: 7px;
+      width: 7px;
+      margin-left: 0.8rem;
+      align-self: top;
+      vertical-align: baseline;
+      margin-bottom: 0.05rem;
+
+      // mobile
+      @media (max-width: 768px) {
+        height: 1rem;
+        width: 1.5rem;
+      }
       }
 
 
@@ -116,9 +167,20 @@
 .stock-recent-performance {
   color: $charcoal;
   font-size: .7em;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: .2rem;
 
-  span {
+  > span {
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     margin-right: 5px;
+  }
+
+  // mobile
+  @media (max-width: 768px) {
+    display: none;
   }
 }
 

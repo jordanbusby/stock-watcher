@@ -65,6 +65,9 @@ const data = [
  * 
  * @param {String} symbol 
  * @returns {Promise<Record<string, any>>}
+ * 
+ * Was using this when I was make a lot of edits and would
+ * have to wait for the API to reset. 
  */
 
 const getFakeData = (symbol) => {

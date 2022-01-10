@@ -6,7 +6,7 @@
         data-stock-high="<%- this.formatMoney(high) %>"
         data-stock-low="<%- this.formatMoney(low) %>"
       >
-        <div class="stock-meter-arrow" data-position="<%= this.getStockMeterArrowPosition() %>"></div>
+        <div class="stock-meter-arrow" style="--arrow-position: <%= this.getStockMeterArrowPosition(high, low, price) %>"></div>
       </figure>
     </div>
     <div class="card-right">

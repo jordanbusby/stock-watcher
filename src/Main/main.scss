@@ -4,10 +4,37 @@
   --card-left-display: none;
 }
 
-#stock-search-button {
-  box-shadow: $box-shadow;
+// adjust the title, search bar and button on mobile
+@media (max-width: 768px) {
+  .page-header {
+    padding-left: 15px;
+  }
+  
+  .stock-search-container {
+    align-items: center;
+    margin-bottom: .8rem;
+    > div {
+      flex: 1 0 70%;
+      max-width: 70%;
+    }
+
+    div + div {
+      flex: 1 0 20%;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
 }
 
+#stock-search-button {
+  box-shadow: $box-shadow;
+
+  @media (max-width: 768px) {
+    flex: 1 0 auto;
+  }
+}
 
 .stock-quotes-container {
   display: grid;
@@ -22,14 +49,10 @@
   .stock-quotes-container {
     grid-template-columns: 1fr 1fr;
   }
-
-  .stock-recent-performance {
-    
-  }
 }
 
 @media (min-width: 992px) {
   .stock-quotes-container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 320px);
   }
 }
