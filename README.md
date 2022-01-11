@@ -1,4 +1,4 @@
-# Stock Watcher Project by Jordan Busby
+# ⛳ Stock Watcher App
 
 ## Notes
 - It doesn't appear to be working in Node 17+, using Node 16.13.1. This can probably be fixed by  `export NODE_OPTIONS=--openssl-legacy-provider` in terminal before launch; but I haven't yet tested.
@@ -10,8 +10,8 @@
 - Replaced some divs here and there with header, section, label, and main elements.
 
 ### Form element
-- Because the 'type' attribute of the button element was omitted, it is sending a 'submit' event, but it is not being caught without a form.
-- Wrapped the stock-search-container in a form element to catch the submit event from the button (which should catch the 'enter' keypress also).
+- Because the 'type' attribute of the button element was omitted, and theres not ancestor form element, it is not sending a 'submit' event.
+- Wrapped the stock-search-container in a form element to cause the submit event from the button (which should catch the 'enter' keypress also).
 - This also helps with the semantics of the HTML. 
 
 ### Error handling
@@ -29,6 +29,7 @@
 ### CSS
 - Added a lot of media queries for the stock quote card.
 - Added an animation on new stock cards to bring attention that a card has been added.
+- Added a simple hover animation that I'm not really sure about 🤷
 
 ## Todo
 - ~~Change the font-color of OPEN, HIGH, LOW and the corresponding prices, among a couple other things on the stock quote card.~~
