@@ -5,12 +5,12 @@
 
 ## Updates
 
-### Added form element
+### Form element
 - Because the 'type' attribute of the button element was omitted, it is sending a 'submit' event, but it is not being caught without a form.
 - Wrapped the stock-search-container in a form element to catch the submit event from the button (which should catch the 'enter' keypress also).
 - This also helps with the semantics of the HTML. 
 
-### Added error handling
+### Error handling
 - If fetch() rejects, it provides the user with an information message instead of sending error to console.
 - If symbol is not found or is invalid, fetch returns 200 still, so this is detected and user is provided with appropriate message.
 - On page load, two stocks were automatically fetched. If for whatever reason they don't load, the page won't add 'blank' stock cards.
@@ -26,7 +26,7 @@
 - Added a lot of media queries for the stock quote card.
 - Added an animation on new stock cards to bring attention that a card has been added.
 
-## Todo
+### Todo
 - Change the font-color of OPEN, HIGH, LOW and the corresponding prices, among a couple other things on the stock quote card. 
 - ~~Clean up/consolidate CSS media queries.~~
 - Some of the error handling is fragmented between files/locations. This could be cleaned up.
