@@ -10,32 +10,36 @@ const MainView = Marionette.View.extend({
     ui: {
         stockSearchInput: '#stock-search-input',
         stockSearchButton: '#stock-search-button',
-        stockSearchInputError: '.stock-error-text'
+        stockSearchInputError: '.stock-error-text',
+        stockSearchForm: '#stock-search-form'
     },
 
     events: {
         'click @ui.stockSearchButton': 'searchStock',
-        'input @ui.stockSearchInput': 'removeInputInvalidClass'
+        'input @ui.stockSearchInput': 'removeInputInvalidClass',
+        'submit @ui.stockSearchForm': 'searchStock'
     },
 
     // on 'add stock' click
-    searchStock: function() {
-        const symbol = this.ui.stockSearchInput.val();
+    searchStock: function(evt) {
+      evt.preventDefault()
 
-        if (symbol.length < 1) {
-            // TODO: show the user a warning here
+      const symbol = this.ui.stockSearchInput.val();
 
-            // set error text
-            this.ui.stockSearchInputError.html("Please enter a stock symbol.")
-            // add bootstrap class
-            this.ui.stockSearchInput.addClass('is-invalid')
+      if (symbol.length < 1) {
+          // TODO: show the user a warning here
 
-            return;
-        }
+          // set error text
+          this.ui.stockSearchInputError.html("Please enter a stock symbol.")
+          // add bootstrap class
+          this.ui.stockSearchInput.addClass('is-invalid')
+
+          return;
+      }
 
 
-        this.ui.stockSearchInput.val('');
-        this.trigger('stockSearch', {symbol: symbol.toUpperCase()});
+      this.ui.stockSearchInput.val('');
+      this.trigger('stockSearch', {symbol: symbol.toUpperCase()});
     },
 
     removeInputInvalidClass() {
