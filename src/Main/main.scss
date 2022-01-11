@@ -1,11 +1,15 @@
 @import "../variables.scss";
+@import "~bootstrap/scss/bootstrap";
 
 :root {
   --card-left-display: none;
+
+  @include media-breakpoint-up($tablet) {
+    --card-left-display: flex;
+  }
 }
 
-// adjust the title, search bar and button on mobile
-@media (max-width: 768px) {
+@include media-breakpoint-down($mobile) {
   .page-header {
     padding-left: 15px;
   }
@@ -30,29 +34,18 @@
 
 #stock-search-button {
   box-shadow: $box-shadow;
-
-  @media (max-width: 768px) {
-    flex: 1 0 auto;
-  }
 }
 
 .stock-quotes-container {
   display: grid;
   gap: 0.4rem;
   grid-auto-rows: 1fr;
-}
 
-@media (min-width: 768px) {
-  :root {
-    --card-left-display: flex;
+  @include media-breakpoint-up($tablet) {
+    grid-template-columns: repeat(2, 290px);
   }
-  .stock-quotes-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
-@media (min-width: 992px) {
-  .stock-quotes-container {
+  @include media-breakpoint-up($smaller-desktop) {
     grid-template-columns: repeat(3, 320px);
   }
 }

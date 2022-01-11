@@ -1,5 +1,4 @@
 <div class="stock-quote-card">
-
     <div class="card-left">
       <figure
         class="stock-meter <%- this.getValueClassName(change) %>"
@@ -12,16 +11,18 @@
     <div class="card-right">
         <h3><%- name %></h3>
         <p class="stock-symbol-label"><%- symbol %></p>
-        <p class="stock-price"><%- this.formatMoney(price) %>
+        <p class="stock-price">
+          <%- this.formatMoney(price) %>
           <span class="<%= this.getValueClassName(change) %>">
             <span class="arrow"><%= this.getArrow(change) %></span>
-            <%- this.formatMoney(change) %> (<%- changePercent %>)
+            <span class="price-change"><%- this.formatMoney(change) %></span>
+            (<%- changePercent %>)
           </span>
         </p>
         <p class="stock-recent-performance">
-            <span>OPEN <%- this.formatMoney(open) %></span>
-            <span>HIGH <%- this.formatMoney(high) %></span>
-            <span>LOW <%- this.formatMoney(low) %></span>
+            <span><span class="price-type">OPEN</span><%- this.formatMoney(open) %></span>
+            <span><span class="price-type">HIGH</span> <%- this.formatMoney(high) %></span>
+            <span><span class="price-type">LOW</span> <%- this.formatMoney(low) %></span>
         </p>
     </div>
 </div>

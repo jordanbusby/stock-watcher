@@ -2,6 +2,7 @@ $white: #fff;
 $white-fade: #fff9;
 
 $light-gray: #f5f5f5;
+$light-charcoal: #95a2b1;
 $charcoal: #696969;
 $dark-blue: #404261;
 
@@ -60,6 +61,12 @@ $stock-meter-value-down:
   position: absolute;
   left: 46%;
   color: $white;
+  font-weight: 700;
 }
 
 $stock-meter-arrow-cp: polygon(0 0, 100% 50%, 0 100%);
+
+$mobile: "sm";
+$tablet: "md";
+$smaller-desktop: "lg";
+$large-desktop: "xl";
