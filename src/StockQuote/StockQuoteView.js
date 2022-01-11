@@ -32,8 +32,8 @@ export const StockQuoteView = Marionette.View.extend({
      * 
      * Used to pass the svg inline to the StockQuoteCard.html template
      */
-    getArrow(value) {
-      const num = Number(Number(value).toFixed(2))
+    getArrowSvg(value) {
+      const num = Number(value).toFixed(2)
       
       return num >= 0
       ? arrowUp
@@ -43,11 +43,11 @@ export const StockQuoteView = Marionette.View.extend({
     // get a class-name for the stock quote card for red or green coloring
     // this is used in the stock quote card template
     getValueClassName(value) {
-    const num = Number(Number(value).toFixed(2))
+    const num = Number(value).toFixed(2)
 
     return num >= 0
-    ? 'value-up'
-    : 'value-down'
+      ? 'value-up'
+      : 'value-down'
     },
 
     /**

@@ -36,6 +36,13 @@
   box-shadow: $box-shadow;
 }
 
+.stock-card {
+  transition: transform .2s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
 .stock-quotes-container {
   display: grid;
   gap: 0.4rem;

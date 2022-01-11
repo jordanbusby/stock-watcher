@@ -1,26 +1,25 @@
-<div class="container mt-5">
-    <div class="row">
+<main class="container mt-5">
+    <header class="row">
         <h1 class="page-header mt-1 mb-4">Stock Watcher</h1>
-    </div>
+    </header>
     <form id="stock-search-form">
-      <div class="row stock-search-container">
+      <section class="row stock-search-container">
           <div class="col-6 col-lg-4">
               <div class="form-group needs-validation">
                   <input id="stock-search-input" type="text" placeholder="Enter Stock Symbol" class="form-control">
-                  <div class="invalid-feedback">
+                  <label class="invalid-feedback">
                     <small class="stock-error-text text-danger">
                       Please enter a stock symbol.
                     </small>      
-                  </div>
-                
+                  </label>
               </div>
           </div>
           <div class="col-6 col-lg-8">
               <button id="stock-search-button" class="btn btn-primary">ADD STOCK</button>
           </div>
-      </div>
+      </section>
     </form>
-    <div class="row stock-results-container d-flex">
+    <section class="row stock-results-container d-flex">
         <div id="stock-quotes" class="col stock-quotes-container"></div>
-    </div>
-</div>
+    </section>
+</main>

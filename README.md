@@ -2,8 +2,12 @@
 
 ## Notes
 - It doesn't appear to be working in Node 17+, using Node 16.13.1. This can probably be fixed by  `export NODE_OPTIONS=--openssl-legacy-provider` in terminal before launch; but I haven't yet tested.
+- `npm run start` will start the webpack dev server and should open a browser to the app.
 
 ## Updates
+
+### Semantic HTML
+- Replaced some divs here and there with header, section, label, and main elements.
 
 ### Form element
 - Because the 'type' attribute of the button element was omitted, it is sending a 'submit' event, but it is not being caught without a form.
@@ -26,8 +30,8 @@
 - Added a lot of media queries for the stock quote card.
 - Added an animation on new stock cards to bring attention that a card has been added.
 
-### Todo
-- Change the font-color of OPEN, HIGH, LOW and the corresponding prices, among a couple other things on the stock quote card. 
+## Todo
+- ~~Change the font-color of OPEN, HIGH, LOW and the corresponding prices, among a couple other things on the stock quote card.~~
 - ~~Clean up/consolidate CSS media queries.~~
 - Some of the error handling is fragmented between files/locations. This could be cleaned up.
 - Import a symbol -> name map to display the appropriate company name instead of the symbol at the top. (Like the designs do)
