@@ -5,7 +5,7 @@
 
 ## Updates
 
-### Added <form> element
+### Added form element
 - Because the 'type' attribute of the button element was omitted, it is sending a 'submit' event, but it is not being caught without a form.
 - Wrapped the stock-search-container in a form element to catch the submit event from the button (which should catch the 'enter' keypress also).
 - This also helps with the semantics of the HTML. 
