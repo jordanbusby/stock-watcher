@@ -9,6 +9,15 @@
   }
 }
 
+.page-header {
+  margin-left: 1rem;
+  color: $dark-blue;
+
+  @include media-breakpoint-down($mobile) {
+    margin-left: 0;
+  }
+}
+
 #app {
   display: grid;
   place-content: center;

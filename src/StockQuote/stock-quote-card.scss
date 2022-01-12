@@ -22,7 +22,7 @@
   position: relative;
 }
 
-.card-left figure.stock-meter {
+figure.stock-meter {
   margin: 0;
   font-size: 0.7em;
   flex: 1 0 auto;
@@ -51,14 +51,19 @@
   }
 }
 
-.stock-meter-arrow {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  clip-path: $stock-meter-arrow-cp;
-  background: $white;
-  bottom: var(--arrow-position, 50%);
-  left: 26%;
+.stock-meter {
+  .stock-meter-arrow {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    clip-path: $stock-meter-arrow-cp;
+    background: $white;
+    bottom: var(--arrow-position, 50%);
+    left: 26%;
+    // animation: arrow-animation 1.5s ease-in-out;
+  }
+  &.value-up .stock-meter-arrow { animation: arrow-animation-up 1.2s ease-in-out; }
+  &.value-down .stock-meter-arrow { animation: arrow-animation-down 1.2s ease-in-out; }
 }
 
 .card-right {
@@ -192,5 +197,23 @@
 
   to {
     background-color: #fff;
+  }
+}
+
+@keyframes arrow-animation-up {
+  from {
+    bottom: 10%;
+  }
+  to {
+    bottom: var(--arrow-position, 50%);
+  }
+}
+
+@keyframes arrow-animation-down {
+  from {
+    bottom: 90%;
+  }
+  to {
+    bottom: var(--arrow-position, 50%);
   }
 }
