@@ -21,7 +21,7 @@ const getApiData = (symbol) => {
 
     return fetch(url.toString(), {method: 'GET'})
         .then(response => response.json())
-        .then(x => x['Global Quote'] || {})
+        .then(x => x['Global Quote'] || x)
         .catch(handleFetchError);
 }
 

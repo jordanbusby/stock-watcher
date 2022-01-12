@@ -16,6 +16,7 @@
 
 ### Error handling
 - If fetch() rejects, it provides the user with an information message instead of sending error to console.
+- If the API is timed out, it tells the user to wait for a bit.
 - If symbol is not found or is invalid, fetch returns 200 still, so this is detected and user is provided with appropriate message.
 - On page load, two stocks were automatically fetched. If for whatever reason they don't load, the page won't add 'blank' stock cards.
 

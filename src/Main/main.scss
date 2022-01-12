@@ -9,6 +9,11 @@
   }
 }
 
+#app {
+  display: grid;
+  place-content: center;
+}
+
 @include media-breakpoint-down($mobile) {
   .page-header {
     padding-left: 15px;

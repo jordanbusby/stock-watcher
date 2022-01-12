@@ -68,7 +68,7 @@ export const StockQuoteView = Marionette.View.extend({
       const numLow = +low
       const numPrice = +price
 
-      // get percentage of a range, * .8 because the stock meter's height if 80% of the container
+      // get percentage of a range, * .8 because the stock meter's height is 80% of the container
       const pct = Math.floor(((numPrice - numLow) * 100 / (numHigh - numLow)) * .8)
 
       // return a % string for css variable
