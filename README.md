@@ -43,4 +43,5 @@
 
 ## Questions for designers
 - I was wondering if adding some more animation/mouseover effects might be good or distracting.
+- Could a designer provide me with a couple different color schemes for me to try?
 - 
