@@ -44,4 +44,7 @@
 ## Questions for designers
 - I was wondering if adding some more animation/mouseover effects might be good or distracting.
 - Could a designer provide me with a couple different color schemes for me to try?
-- 
+- What browsers do we need to support?
+- Do we need to design with accessibility in mind?
+- Are there any frameworks or libraries that are off limits? Should I stay with a certain framework or library?
+- Should I try to incorporate our brand's colors or theme?
